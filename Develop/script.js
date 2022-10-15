@@ -29,6 +29,15 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
 // Step 1 Ask how many characters does the user want the password to be?
 var passwordLength = prompt("How many characters would you like your password to be? (8-128)")
+
+if (passwordLength < 8 || passwordLength > 128) {
+  window.alert("Password length must be between 8 and 128 characters")
+  return
+}
+if (isNaN(passwordLength)) {
+  window.alert("That is not a number")
+  return
+}
 // Step 2 Ask if the user wants to use uppercase
 var useUppercase = confirm("Would you like to include uppercase letters?")
 // Step 3 Ask if the user wants to use lowercase
@@ -56,6 +65,8 @@ if (useNumbers) {
 if (useSpecial) {
   potentialChars = potentialChars.concat(special)
 }
+
+
 
 
 // Create the length of password
