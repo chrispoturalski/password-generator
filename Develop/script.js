@@ -7,6 +7,10 @@ const lowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","
 const numbers = [0,1,2,3,4,5,6,7,8,9]
 const special = ["!","@","#","$","%","^","&","*","/"]
 
+// Pulls random numbers
+function getRandomInt (max) {
+  return Math.ceil(Math.random()*max)
+}
 
 // Write password to the #password input
 function writePassword() {
@@ -35,4 +39,33 @@ var useNumbers = confirm("Would you like to include numbers?")
 var useSpecial = confirm("Would you like to include special characters?")
 
 
+// Create one element to store all characters in password
+var potentialChars = []
+if (useUppercase) {
+  potentialChars = potentialChars.concat(uppercase)
+}
+
+if (useLowercase) {
+  potentialChars = potentialChars.concat(lowercase)
+}
+
+if (useNumbers) {
+  potentialChars = potentialChars.concat(numbers)
+}
+
+if (useSpecial) {
+  potentialChars = potentialChars.concat(special)
+}
+
+
+// Create the length of password
+
+var password = ''
+for (var i = 0; i < passwordLength; i++){
+  password = password + potentialChars[getRandomInt(potentialChars.length)]
+}
+
+// logs password in the box on the webpage
+console.log()
+  return password
 }
