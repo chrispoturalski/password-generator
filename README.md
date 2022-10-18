@@ -42,3 +42,5 @@ Please refer to the follow images for a mockup of my results:
 ![portfolio](/password-generator/Assets/final-password.png)
 
 # Website Link
+
+https://chrispoturalski.github.io/password-generator/
